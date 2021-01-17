@@ -1,7 +1,7 @@
 package main.java.models;
 
-import main.java.utils.BandHorizontal;
-import main.java.utils.BandVertical;
+import main.java.type.BandHorizontal;
+import main.java.type.BandVertical;
 
 public class ConstantFlat {
 

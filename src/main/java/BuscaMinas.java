@@ -1,22 +1,29 @@
 package main.java;
 
-public abstract class BuscaMInas {
+import main.java.controllers.LocalController;
+import main.java.controllers.Logic;
+import main.java.views.View;
 
-    private Logic logic;
+public abstract class BuscaMinas {
 
-    private View view;
+    private final Logic logic;
 
-    public void run() {
-        Controller controller;
-        do {
-            
-        } while (controller != null);
+    private final View view;
+
+    public BuscaMinas() {
+        this.logic = new Logic();
+        this.view = this.createView();
     }
 
-    public static void main(String[] args) {
+    protected abstract View createView();
 
-        int number = 200;
-
-
+    public void run() {
+        LocalController controller;
+        do {
+            controller = this.logic.getController();
+            if (controller != null) {
+                this.view.interact(controller);
+            }
+        } while (controller != null);
     }
 }

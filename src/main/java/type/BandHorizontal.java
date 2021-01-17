@@ -1,4 +1,4 @@
-package main.java.utils;
+package main.java.type;
 
 public enum BandHorizontal {
 

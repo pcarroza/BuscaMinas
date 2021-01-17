@@ -7,7 +7,7 @@ public class FlatMines {
 
     private final HashMap<Coordinate, Box> mines;
 
-    public static final int AMOUNT_OF_MINES = 5;
+    public static final int AMOUNT_OF_MINES = 10;
 
     public FlatMines() {
         this.mines = new HashMap<>();
@@ -18,8 +18,8 @@ public class FlatMines {
         Random random = new Random();
         int counter = 0;
         while (counter < AMOUNT_OF_MINES) {
-            int row = random.rand(ConstantFlat.LAST_POSITION_ROW);
-            int column = random.rand(ConstantFlat.LAST_POSITION_COLUMN);
+            int row = 1 + (int)(Math.random() * ConstantFlat.LAST_POSITION_ROW);
+            int column = 1 + (int)(Math.random() * ConstantFlat.LAST_POSITION_COLUMN);
             Coordinate coordinate = new Coordinate(row, column);
             if (!this.mines.containsKey(coordinate)) {
                 this.mines.put(coordinate, Box.MINE);
@@ -48,5 +48,8 @@ public class FlatMines {
     }
 
     public static void main(String[] args) {
+        FlatMines mines = new FlatMines();
+        mines.getCoordinate();
+
     }
 }

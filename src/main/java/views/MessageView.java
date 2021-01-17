@@ -2,7 +2,7 @@ package main.java.views;
 
 import main.java.utils.IO;
 
-public enum Message {
+public enum MessageView {
 
     ONE_SPACE(" "),
     TWO_SPACE_INTERSPERSED("  "),
@@ -10,7 +10,7 @@ public enum Message {
 
     private final String designLabel;
 
-    Message(String text) {
+    MessageView(String text) {
         this.designLabel = text;
     }
 

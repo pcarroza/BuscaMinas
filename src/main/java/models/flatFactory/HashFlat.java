@@ -8,11 +8,11 @@ public class HashFlat implements Flat {
 
     private HashMap<Coordinate, Box> flat;
 
-    private final FlatMines mines = null;
+    private final FlatMines mines;
 
     public HashFlat() {
         this.createFlat();
-        //mines = new FlatMines();
+        this.mines = new FlatMines();
     }
 
     private void createFlat() {
@@ -27,45 +27,53 @@ public class HashFlat implements Flat {
     @Override
     public void openBox(Coordinate coordinate) {
         assert coordinate != null;
+        Box box = Box.NUMBER_OF_MINES_AROUND_THE_BOX;
         String numberMines = this.mines.calculateNumberOfMines(coordinate.whatPosition());
-        Box box = Box.NUMBER_MINES;
         box.setNumberOfMines(numberMines);
-        this.flat.replace(coordinate, box);
+        this.change(coordinate, box);
     }
 
     @Override
     public void removeFlag(Coordinate coordinate) {
         assert coordinate != null;
-        this.flat.replace(coordinate, Box.FLAG);
+        this.change(coordinate, Box.FLAG);
     }
 
     @Override
     public void putFlagInBox(Coordinate coordinate) {
         assert coordinate != null;
-        this.flat.replace(coordinate, Box.FLAG);
+        this.change(coordinate, Box.FLAG);
     }
 
     @Override
     public boolean isEmptyBox(Coordinate coordinate) {
         assert coordinate != null;
-        return this.flat.get(coordinate).isEquals(Box.EMPTY);
+        return this.isSomethingInTheBox(coordinate, Box.EMPTY);
     }
 
     @Override
     public boolean isFlagInBox(Coordinate coordinate) {
-        return false;
+        return this.isSomethingInTheBox(coordinate, Box.FLAG);
     }
 
     @Override
     public boolean isMineInBox(Coordinate coordinate) {
         assert coordinate != null;
-        return true;
+        return this.mines.isMineInBox(coordinate);
     }
 
     @Override
     public Box getBox(Coordinate coordinate) {
         assert coordinate != null;
         return this.flat.get(coordinate);
+    }
+
+    private void change(Coordinate coordinate, Box box) {
+        this.flat.replace(coordinate, box);
+    }
+
+    private boolean isSomethingInTheBox(Coordinate coordinate, Box box) {
+        return this.flat.get(coordinate).isEquals(box);
     }
 
     public static void main(String[] args) {

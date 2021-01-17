@@ -5,7 +5,7 @@ public enum Box {
     EMPTY(new Token("_")),
     FLAG(new Token("P")),
     MINE(new Token("*")),
-    NUMBER_MINES(new Token());
+    NUMBER_OF_MINES_AROUND_THE_BOX(new Token());
 
     private final Token token;
 
@@ -24,9 +24,5 @@ public enum Box {
     @Override
     public String toString() {
         return this.token.toString();
-    }
-
-    public static void main(String[] args) {
-        System.out.println(Box.EMPTY.isEquals(Box.EMPTY));
     }
 }
