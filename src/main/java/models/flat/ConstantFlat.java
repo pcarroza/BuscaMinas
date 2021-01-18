@@ -1,4 +1,4 @@
-package main.java.models;
+package main.java.models.flat;
 
 import main.java.type.BandHorizontal;
 import main.java.type.BandVertical;

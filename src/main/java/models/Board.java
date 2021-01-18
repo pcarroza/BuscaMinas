@@ -1,7 +1,7 @@
 package main.java.models;
 
-import main.java.models.flatFactory.Flat;
-import main.java.models.flatFactory.FlatFactoryMethod;
+import main.java.models.flat.Flat;
+import main.java.models.flat.FlatFactoryMethod;
 
 public class Board {
 

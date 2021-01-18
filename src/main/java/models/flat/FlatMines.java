@@ -1,5 +1,7 @@
-package main.java.models;
+package main.java.models.flat;
 
+import main.java.models.Coordinate;
+import main.java.models.EnumStateCoordinate;
 import main.java.utils.Random;
 import java.util.HashMap;
 
@@ -28,28 +30,11 @@ public class FlatMines {
         }
     }
 
-    public void getMines() {
-        System.out.println(this.mines.values());
-    }
-
-    public void getCoordinate() {
-        System.out.println(this.mines.keySet());
-    }
-
     public boolean isMineInBox(Coordinate coordinate) {
         return this.mines.containsKey(coordinate);
     }
 
-    private void setPositionCoordinate(EnumStateCoordinate whatPosition) {
-    }
-
     public String calculateNumberOfMines(EnumStateCoordinate position) {
         return null;
-    }
-
-    public static void main(String[] args) {
-        FlatMines mines = new FlatMines();
-        mines.getCoordinate();
-
     }
 }

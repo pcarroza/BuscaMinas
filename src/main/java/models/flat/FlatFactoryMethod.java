@@ -1,4 +1,4 @@
-package main.java.models.flatFactory;
+package main.java.models.flat;
 
 public abstract class FlatFactoryMethod {
 

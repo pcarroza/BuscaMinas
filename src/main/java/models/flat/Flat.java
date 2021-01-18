@@ -1,6 +1,5 @@
-package main.java.models.flatFactory;
+package main.java.models.flat;
 
-import main.java.models.Box;
 import main.java.models.Coordinate;
 
 public interface Flat {

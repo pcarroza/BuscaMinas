@@ -1,6 +1,6 @@
-package main.java.models.positionCoordinate;
+package main.java.models.coordinate;
 
-import main.java.models.ConstantFlat;
+import main.java.models.flat.ConstantFlat;
 import main.java.models.EnumStateCoordinate;
 
 public class StateLowerRightCorner extends StateCoordinate {

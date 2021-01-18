@@ -1,4 +1,4 @@
-package main.java.models;
+package main.java.models.flat;
 
 public enum Box {
 

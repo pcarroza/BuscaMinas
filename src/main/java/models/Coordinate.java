@@ -1,6 +1,6 @@
 package main.java.models;
 
-import main.java.models.positionCoordinate.ContextCoordinate;
+import main.java.models.coordinate.ContextCoordinate;
 import java.util.Objects;
 
 public class Coordinate implements CoordinateBuscaMinas {

@@ -1,4 +1,4 @@
-package main.java.views;
+package main.java.views.console;
 
 import main.java.utils.IO;
 

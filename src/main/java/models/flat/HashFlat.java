@@ -1,4 +1,4 @@
-package main.java.models.flatFactory;
+package main.java.models.flat;
 
 import main.java.models.*;
 

@@ -1,4 +1,4 @@
-package main.java.models;
+package main.java.models.flat;
 
 import java.util.Objects;
 
@@ -13,7 +13,7 @@ public class Token {
     public Token() {
     }
 
-    void setToken(String token) {
+    public void setToken(String token) {
         this.token = token;
     }
 

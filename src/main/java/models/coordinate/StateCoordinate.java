@@ -1,4 +1,4 @@
-package main.java.models.positionCoordinate;
+package main.java.models.coordinate;
 
 import main.java.models.EnumStateCoordinate;
 

@@ -1,7 +1,8 @@
-package main.java.views;
+package main.java.views.console;
 
 import main.java.models.*;
-import main.java.models.flatFactory.HashFlat;
+import main.java.models.flat.ConstantFlat;
+import main.java.models.flat.HashFlat;
 import main.java.type.BandHorizontal;
 import main.java.type.BandVertical;
 import main.java.utils.IO;

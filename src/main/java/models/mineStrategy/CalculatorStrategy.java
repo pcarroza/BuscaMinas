@@ -1,4 +1,4 @@
-package main.java.models.calculatorStrategy;
+package main.java.models.mineStrategy;
 
 public interface CalculatorStrategy {
 
