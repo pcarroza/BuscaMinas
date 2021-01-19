@@ -28,7 +28,7 @@ public class HashFlat implements Flat {
     public void openBox(Coordinate coordinate) {
         assert coordinate != null;
         Box box = Box.NUMBER_OF_MINES_AROUND_THE_BOX;
-        String numberMines = this.mines.calculateNumberOfMines(coordinate.whatPosition());
+        String numberMines = this.mines.calculateNumberOfMines(coordinate.getPosition());
         box.setNumberOfMines(numberMines);
         this.change(coordinate, box);
     }
@@ -48,12 +48,12 @@ public class HashFlat implements Flat {
     @Override
     public boolean isEmptyBox(Coordinate coordinate) {
         assert coordinate != null;
-        return this.isSomethingInTheBox(coordinate, Box.EMPTY);
+        return this.isSomethingEquals(coordinate, Box.EMPTY);
     }
 
     @Override
     public boolean isFlagInBox(Coordinate coordinate) {
-        return this.isSomethingInTheBox(coordinate, Box.FLAG);
+        return this.isSomethingEquals(coordinate, Box.FLAG);
     }
 
     @Override
@@ -72,7 +72,7 @@ public class HashFlat implements Flat {
         this.flat.replace(coordinate, box);
     }
 
-    private boolean isSomethingInTheBox(Coordinate coordinate, Box box) {
+    private boolean isSomethingEquals(Coordinate coordinate, Box box) {
         return this.flat.get(coordinate).isEquals(box);
     }
 

@@ -1,6 +1,5 @@
-package main.java.models.coordinate;
+package main.java.models.stateCoordinate;
 
-import main.java.models.CoordinateBuscaMinas;
 import main.java.models.EnumStateCoordinate;
 
 public class ContextCoordinate {

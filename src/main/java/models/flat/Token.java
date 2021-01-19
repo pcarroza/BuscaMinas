@@ -2,18 +2,18 @@ package main.java.models.flat;
 
 import java.util.Objects;
 
-public class Token {
+class Token {
 
     private String token;
 
-    public Token(String token) {
+    Token(String token) {
         this.token = token;
     }
 
-    public Token() {
+    Token() {
     }
 
-    public void setToken(String token) {
+    void setToken(String token) {
         this.token = token;
     }
 

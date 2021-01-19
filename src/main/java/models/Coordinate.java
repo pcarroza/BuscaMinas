@@ -1,6 +1,8 @@
 package main.java.models;
 
-import main.java.models.coordinate.ContextCoordinate;
+import main.java.models.stateCoordinate.ContextCoordinate;
+import main.java.models.stateCoordinate.CoordinateBuscaMinas;
+
 import java.util.Objects;
 
 public class Coordinate implements CoordinateBuscaMinas {
@@ -18,7 +20,7 @@ public class Coordinate implements CoordinateBuscaMinas {
     }
 
     @Override
-    public EnumStateCoordinate whatPosition() {
+    public EnumStateCoordinate getPosition() {
         return contextCoordinate.getStateCoordinate();
     }
 
@@ -53,6 +55,6 @@ public class Coordinate implements CoordinateBuscaMinas {
     }
 
     public static void main(String[] args) {
-        System.out.println(new Coordinate(1, 1).whatPosition());
+        System.out.println(new Coordinate(1, 1).getPosition());
     }
 }

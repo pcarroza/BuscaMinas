@@ -1,10 +1,10 @@
-package main.java.models.coordinate;
+package main.java.models.stateCoordinate;
 
 import main.java.models.EnumStateCoordinate;
 
-public class StateUpperHorizontal extends StateCoordinate {
+public class StateRightVertical extends StateCoordinate {
 
-    protected StateUpperHorizontal(ContextCoordinate contextCoordinate) {
+    protected StateRightVertical(ContextCoordinate contextCoordinate) {
         super(contextCoordinate);
     }
 
@@ -15,6 +15,6 @@ public class StateUpperHorizontal extends StateCoordinate {
 
     @Override
     public EnumStateCoordinate getStateCoordinate() {
-        return EnumStateCoordinate.HORIZONTAL_UPPER_BAND;
+        return EnumStateCoordinate.RIGHT_SIDE_BAND;
     }
 }
