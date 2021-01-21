@@ -1,6 +1,6 @@
 package main.java.models.flat;
 
-import main.java.models.Coordinate;
+import main.java.models.coordinate.Coordinate;
 
 public interface Flat {
 

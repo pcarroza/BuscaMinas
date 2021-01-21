@@ -1,7 +1,8 @@
-package main.java.models;
+package main.java.models.coordinate;
 
-import main.java.models.stateCoordinate.ContextCoordinate;
-import main.java.models.stateCoordinate.CoordinateBuscaMinas;
+import main.java.models.coordinate.sttateCoordinate.ContextState;
+import main.java.models.coordinate.sttateCoordinate.StateCoordinate;
+import main.java.models.coordinate.strategyCoordinate.ContextStrategy;
 
 import java.util.Objects;
 
@@ -11,16 +12,19 @@ public class Coordinate implements CoordinateBuscaMinas {
 
     private final int column;
 
-    private static ContextCoordinate contextCoordinate;
+    private static ContextState contextCoordinate;
+
+    private static ContextStrategy contextStrategy;
 
     public Coordinate(int row, int column) {
         this.row = row;
         this.column = column;
-        contextCoordinate = new ContextCoordinate(this);
+        contextCoordinate = new ContextState(this);
+        contextStrategy = new ContextStrategy(this);
     }
 
     @Override
-    public EnumStateCoordinate getPosition() {
+    public StateCoordinate getListOfCoordinatesAround() {
         return contextCoordinate.getStateCoordinate();
     }
 
@@ -55,6 +59,6 @@ public class Coordinate implements CoordinateBuscaMinas {
     }
 
     public static void main(String[] args) {
-        System.out.println(new Coordinate(1, 1).getPosition());
+        System.out.println(new Coordinate(1, 1).getListOfCoordinatesAround());
     }
 }

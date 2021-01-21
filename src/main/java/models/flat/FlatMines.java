@@ -1,7 +1,7 @@
 package main.java.models.flat;
 
-import main.java.models.Coordinate;
-import main.java.models.EnumStateCoordinate;
+import main.java.models.coordinate.Coordinate;
+import main.java.models.coordinate.sttateCoordinate.StateCoordinate;
 import main.java.utils.Random;
 import java.util.HashMap;
 
@@ -34,7 +34,11 @@ public class FlatMines {
         return this.mines.containsKey(coordinate);
     }
 
-    public String calculateNumberOfMines(EnumStateCoordinate position) {
-        return null;
+    public int calculateNumberOfMines(StateCoordinate position) {
+        return 0;
+    }
+
+    public boolean isContained(Coordinate coordinate) {
+        return this.mines.containsKey(coordinate);
     }
 }

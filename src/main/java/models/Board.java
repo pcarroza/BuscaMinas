@@ -2,6 +2,7 @@ package main.java.models;
 
 import main.java.models.flat.Flat;
 import main.java.models.flat.FlatFactoryMethod;
+import main.java.models.coordinate.Coordinate;
 
 public class Board {
 

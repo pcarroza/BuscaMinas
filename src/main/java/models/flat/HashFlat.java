@@ -1,6 +1,6 @@
 package main.java.models.flat;
 
-import main.java.models.*;
+import main.java.models.coordinate.Coordinate;
 
 import java.util.HashMap;
 
@@ -28,8 +28,8 @@ public class HashFlat implements Flat {
     public void openBox(Coordinate coordinate) {
         assert coordinate != null;
         Box box = Box.NUMBER_OF_MINES_AROUND_THE_BOX;
-        String numberMines = this.mines.calculateNumberOfMines(coordinate.getPosition());
-        box.setNumberOfMines(numberMines);
+        int numberMines = this.mines.calculateNumberOfMines(coordinate.getListOfCoordinatesAround());
+        box.setNumberOfMines(String.valueOf(numberMines));
         this.change(coordinate, box);
     }
 

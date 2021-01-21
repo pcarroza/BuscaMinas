@@ -1,29 +1,29 @@
-package main.java.models.stateCoordinate;
+package main.java.models.coordinate.sttateCoordinate;
 
-import main.java.models.EnumStateCoordinate;
+import main.java.models.coordinate.CoordinateBuscaMinas;
 
-public class ContextCoordinate {
+public class ContextState {
 
-    private StateCoordinate stateCoordinate;
+    private State stateCoordinate;
 
     private final CoordinateBuscaMinas coordinate;
 
-    public ContextCoordinate(CoordinateBuscaMinas coordinate) {
+    public ContextState(CoordinateBuscaMinas coordinate) {
         this.coordinate = coordinate;
         this.stateInitial();
     }
 
-    public void setStateCoordinate(StateCoordinate stateCoordinate) {
+    public void setStateCoordinate(State stateCoordinate) {
         this.stateCoordinate = stateCoordinate;
     }
 
-    public EnumStateCoordinate getStateCoordinate() {
+    public StateCoordinate getStateCoordinate() {
         this.whatPosition();
         return this.stateCoordinate.getStateCoordinate();
     }
 
     void whatPosition() {
-        this.stateCoordinate.whatPosition(this);
+        this.stateCoordinate.getPosition(this);
         this.stateInitial();
     }
 

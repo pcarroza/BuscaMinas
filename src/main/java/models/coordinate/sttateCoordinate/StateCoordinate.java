@@ -1,6 +1,6 @@
-package main.java.models;
+package main.java.models.coordinate.sttateCoordinate;
 
-public enum EnumStateCoordinate {
+public enum StateCoordinate {
     UPPER_LEFT_CORNER,
     RIGHT_UPPER_CORNER,
     LOWER_RIGHT_CORNER,

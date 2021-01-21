@@ -1,5 +1,7 @@
 package main.java.models;
 
+import main.java.models.coordinate.Coordinate;
+
 public class Game {
 
     private final Board board;

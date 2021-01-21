@@ -1,16 +1,15 @@
-package main.java.models.stateCoordinate;
+package main.java.models.coordinate.sttateCoordinate;
 
 import main.java.models.flat.ConstantFlat;
-import main.java.models.EnumStateCoordinate;
 
-public class StateUpperLeftCorner extends StateCoordinate {
+public class StateUpperLeftCorner extends State {
 
-    protected StateUpperLeftCorner(ContextCoordinate contextCoordinate) {
+    protected StateUpperLeftCorner(ContextState contextCoordinate) {
         super(contextCoordinate);
     }
 
     @Override
-    public void whatPosition(ContextCoordinate context) {
+    public void getPosition(ContextState context) {
         if (context.getRow() != ConstantFlat.FIRST_POSITION_ROW &&
             context.getColumn() != ConstantFlat.FIRST_POSITION_ROW) {
             context.setStateCoordinate(new StateUpperRightCorner(context));
@@ -19,8 +18,8 @@ public class StateUpperLeftCorner extends StateCoordinate {
     }
 
     @Override
-    public EnumStateCoordinate getStateCoordinate() {
-        return EnumStateCoordinate.LOWER_LEFT_CORNER;
+    public StateCoordinate getStateCoordinate() {
+        return StateCoordinate.LOWER_LEFT_CORNER;
     }
 }
 
