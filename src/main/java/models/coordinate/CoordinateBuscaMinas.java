@@ -1,10 +1,10 @@
 package main.java.models.coordinate;
 
-import main.java.models.coordinate.sttateCoordinate.StateCoordinate;
+import java.util.List;
 
 public interface CoordinateBuscaMinas {
 
-    StateCoordinate getListOfCoordinatesAround();
+    List<Coordinate> getListOfCoordinatesAround();
 
     int getRow();
 

@@ -1,9 +1,11 @@
 package main.java.models.coordinate.strategyCoordinate;
 
+import main.java.models.coordinate.Coordinate;
 import main.java.models.coordinate.CoordinateBuscaMinas;
-import main.java.models.coordinate.sttateCoordinate.StateCoordinate;
+import main.java.models.coordinate.stateCoordinate.StateCoordinate;
 
 import java.util.HashMap;
+import java.util.List;
 
 public class ContextStrategy {
 
@@ -14,14 +16,15 @@ public class ContextStrategy {
     public ContextStrategy(CoordinateBuscaMinas coordinate) {
         this.coordinate = coordinate;
         this.strategies = new HashMap<>();
-        this.strategies.put(StateCoordinate.UPPER_LEFT_CORNER, new UpperLeftCornerStrategy());
+        /*this.strategies.put(StateCoordinate.UPPER_LEFT_CORNER, new UpperLeftCornerStrategy());
         this.strategies.put(StateCoordinate.RIGHT_UPPER_CORNER, new UpperLeftCornerStrategy());
         this.strategies.put(StateCoordinate.LOWER_LEFT_CORNER, new LowerLeftCornerStrategy());
-        this.strategies.put(StateCoordinate.LOWER_RIGHT_CORNER, new LowerRightCornerStrategy());
+        this.strategies.put(StateCoordinate.LOWER_RIGHT_CORNER, new LowerRightCornerStrategy());*/
     }
 
-    public int calculateNumberOfMine(StateCoordinate stateCoordinate) {
-        return this.strategies.get(stateCoordinate).calculateNumberOfMines();
+
+    public List<Coordinate> getListOfCoordinatesAround(StateCoordinate stateCoordinate) {
+        return null;
     }
 }
 

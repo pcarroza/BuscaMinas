@@ -15,9 +15,9 @@ public class UpperLeftCornerStrategy implements PositionStrategy {
 
     public UpperLeftCornerStrategy() {
         this.coordinatesRound = new ArrayList<>();
-        this.coordinatesRound.add(new Coordinate(FIRST_POSITION, SECOND_POSITION));
+        /*this.coordinatesRound.add(new Coordinate(FIRST_POSITION, SECOND_POSITION));
         this.coordinatesRound.add(new Coordinate(SECOND_POSITION, FIRST_POSITION));
-        this.coordinatesRound.add(new Coordinate(SECOND_POSITION, SECOND_POSITION));
+        this.coordinatesRound.add(new Coordinate(SECOND_POSITION, SECOND_POSITION));*/
     }
 
     @Override

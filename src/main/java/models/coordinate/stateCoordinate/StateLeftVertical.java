@@ -1,19 +1,18 @@
-package main.java.models.coordinate.sttateCoordinate;
+package main.java.models.coordinate.stateCoordinate;
 
 public class StateLeftVertical extends State {
-
 
     protected StateLeftVertical(ContextState contextCoordinate) {
         super(contextCoordinate);
     }
 
     @Override
-    public void getPosition(ContextState context) {
+    public void execute() {
 
     }
 
     @Override
     public StateCoordinate getStateCoordinate() {
-        return StateCoordinate.LEFT_SIDE_BAND;
+        return this.state;
     }
 }

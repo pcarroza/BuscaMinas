@@ -1,4 +1,4 @@
-package main.java.models.coordinate.sttateCoordinate;
+package main.java.models.coordinate.stateCoordinate;
 
 public class StateLowerHorizontal extends State {
 
@@ -7,12 +7,12 @@ public class StateLowerHorizontal extends State {
     }
 
     @Override
-    public void getPosition(ContextState context) {
+    public void execute() {
 
     }
 
     @Override
     public StateCoordinate getStateCoordinate() {
-        return StateCoordinate.HORIZONTAL_LOWER_BAND;
+        return this.state;
     }
 }

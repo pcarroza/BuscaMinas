@@ -1,9 +1,9 @@
 package main.java.models.coordinate;
 
-import main.java.models.coordinate.sttateCoordinate.ContextState;
-import main.java.models.coordinate.sttateCoordinate.StateCoordinate;
+import main.java.models.coordinate.stateCoordinate.ContextState;
 import main.java.models.coordinate.strategyCoordinate.ContextStrategy;
 
+import java.util.List;
 import java.util.Objects;
 
 public class Coordinate implements CoordinateBuscaMinas {
@@ -24,8 +24,8 @@ public class Coordinate implements CoordinateBuscaMinas {
     }
 
     @Override
-    public StateCoordinate getListOfCoordinatesAround() {
-        return contextCoordinate.getStateCoordinate();
+    public List<Coordinate> getListOfCoordinatesAround() {
+        return contextStrategy.getListOfCoordinatesAround(contextCoordinate.getStateCoordinate());
     }
 
     @Override
@@ -59,6 +59,8 @@ public class Coordinate implements CoordinateBuscaMinas {
     }
 
     public static void main(String[] args) {
-        System.out.println(new Coordinate(1, 1).getListOfCoordinatesAround());
+        CoordinateBuscaMinas coordinate = new Coordinate(1, 1);
+        boolean isEquals = coordinate.equals(new Coordinate(1,1));
+        System.out.println(isEquals);
     }
 }

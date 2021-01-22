@@ -1,4 +1,4 @@
-package main.java.models.coordinate.sttateCoordinate;
+package main.java.models.coordinate.stateCoordinate;
 
 public class StateRightVertical extends State {
 
@@ -7,12 +7,12 @@ public class StateRightVertical extends State {
     }
 
     @Override
-    public void getPosition(ContextState context) {
+    public void execute() {
 
     }
 
     @Override
     public StateCoordinate getStateCoordinate() {
-        return StateCoordinate.RIGHT_SIDE_BAND;
+        return this.state;
     }
 }

@@ -1,4 +1,4 @@
-package main.java.models.coordinate.sttateCoordinate;
+package main.java.models.coordinate.stateCoordinate;
 
 public enum StateCoordinate {
     UPPER_LEFT_CORNER,

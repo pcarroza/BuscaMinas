@@ -1,9 +1,9 @@
 package main.java.models.flat;
 
 import main.java.models.coordinate.Coordinate;
-import main.java.models.coordinate.sttateCoordinate.StateCoordinate;
 import main.java.utils.Random;
 import java.util.HashMap;
+import java.util.List;
 
 public class FlatMines {
 
@@ -34,8 +34,14 @@ public class FlatMines {
         return this.mines.containsKey(coordinate);
     }
 
-    public int calculateNumberOfMines(StateCoordinate position) {
-        return 0;
+    public int calculateNumberOfMines(List<Coordinate> coordinates) {
+        int counter = 0;
+        for (Coordinate coordinate : coordinates) {
+            if (this.mines.containsKey(coordinate)) {
+                counter++;
+            }
+        }
+        return counter;
     }
 
     public boolean isContained(Coordinate coordinate) {
