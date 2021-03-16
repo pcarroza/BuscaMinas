@@ -11,11 +11,6 @@ public class ConsoleBuscaMinas extends BuscaMinas {
     }
 
     public static void main(String[] args) {
-        new ConsoleBuscaMinas().run();
-
-        String alfa = "alfa";
-        String number = alfa.replaceAll("alfa", "" + 100);
-        System.out.println(number);
-
+        new ConsoleBuscaMinas();
     }
 }

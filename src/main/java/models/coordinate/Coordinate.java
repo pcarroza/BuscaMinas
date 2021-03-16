@@ -1,9 +1,8 @@
 package main.java.models.coordinate;
 
-import main.java.models.coordinate.stateCoordinate.ContextState;
-import main.java.models.coordinate.strategyCoordinate.ContextStrategy;
+import main.java.models.coordinate.positionCoordinate.Context;
+import main.java.models.coordinate.positionCoordinate.PositionCoordinate;
 
-import java.util.List;
 import java.util.Objects;
 
 public class Coordinate implements CoordinateBuscaMinas {
@@ -12,20 +11,18 @@ public class Coordinate implements CoordinateBuscaMinas {
 
     private final int column;
 
-    private static ContextState contextCoordinate;
-
-    private static ContextStrategy contextStrategy;
+    private static Context context;
 
     public Coordinate(int row, int column) {
+        assert row >= 1 && column >= 1;
         this.row = row;
         this.column = column;
-        contextCoordinate = new ContextState(this);
-        contextStrategy = new ContextStrategy(this);
+        context = new Context(this);
     }
 
     @Override
-    public List<Coordinate> getListOfCoordinatesAround() {
-        return contextStrategy.getListOfCoordinatesAround(contextCoordinate.getStateCoordinate());
+    public PositionCoordinate getPosition() {
+        return context.getPositionCoordinate();
     }
 
     @Override
@@ -59,8 +56,17 @@ public class Coordinate implements CoordinateBuscaMinas {
     }
 
     public static void main(String[] args) {
-        CoordinateBuscaMinas coordinate = new Coordinate(1, 1);
-        boolean isEquals = coordinate.equals(new Coordinate(1,1));
-        System.out.println(isEquals);
+        Coordinate coordinate = new Coordinate(1, 1);
+        System.out.println(coordinate.getPosition());
+
+        Coordinate coordinate1 = new Coordinate(1, 10);
+        System.out.println(coordinate1.getPosition());
+
+        Coordinate coordinate2 = new Coordinate(10,10);
+        System.out.println(coordinate2.getPosition());
+
+        Coordinate coordinate3 = new Coordinate(2,4);
+        System.out.println(coordinate3.getPosition());
+
     }
 }

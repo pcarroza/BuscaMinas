@@ -9,7 +9,7 @@ public class Board {
     private final Flat flat;
 
     public Board() {
-        flat = FlatFactoryMethod.getInstance().getFlat();
+        this.flat = FlatFactoryMethod.getInstance().getFlat();
     }
 
     public void openBox(Coordinate coordinate) {
@@ -17,20 +17,20 @@ public class Board {
         this.flat.openBox(coordinate);
     }
 
-    public void remover(Coordinate coordinate) {
+    public void removerFlag(Coordinate coordinate) {
         assert coordinate != null;
         this.flat.removeFlag(coordinate);
     }
 
-    public void putFlag(Coordinate coordinate) {
+    public void putFlagInBox(Coordinate coordinate) {
         this.flat.putFlagInBox(coordinate);
     }
 
-    public boolean isEmpty(Coordinate coordinate) {
+    public boolean isOpenBox(Coordinate coordinate) {
         return this.flat.isEmptyBox(coordinate);
     }
 
-    public boolean isMineBox(Coordinate coordinate) {
+    public boolean isMineInBox(Coordinate coordinate) {
         return this.flat.isMineInBox(coordinate);
     }
 

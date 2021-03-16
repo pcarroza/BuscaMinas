@@ -45,15 +45,23 @@ public class HashFlat implements Flat {
         this.change(coordinate, Box.FLAG);
     }
 
+    private void change(Coordinate coordinate, Box box) {
+        this.flat.replace(coordinate, box);
+    }
+
     @Override
     public boolean isEmptyBox(Coordinate coordinate) {
         assert coordinate != null;
-        return this.isSomethingEquals(coordinate, Box.EMPTY);
+        return this.isEquals(coordinate, Box.EMPTY);
     }
 
     @Override
     public boolean isFlagInBox(Coordinate coordinate) {
-        return this.isSomethingEquals(coordinate, Box.FLAG);
+        return this.isEquals(coordinate, Box.FLAG);
+    }
+
+    private boolean isEquals(Coordinate coordinate, Box box) {
+        return this.flat.get(coordinate).isEquals(box);
     }
 
     @Override
@@ -66,14 +74,6 @@ public class HashFlat implements Flat {
     public Box getBox(Coordinate coordinate) {
         assert coordinate != null;
         return this.flat.get(coordinate);
-    }
-
-    private void change(Coordinate coordinate, Box box) {
-        this.flat.replace(coordinate, box);
-    }
-
-    private boolean isSomethingEquals(Coordinate coordinate, Box box) {
-        return this.flat.get(coordinate).isEquals(box);
     }
 
     public static void main(String[] args) {

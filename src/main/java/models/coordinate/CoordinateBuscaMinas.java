@@ -1,10 +1,10 @@
 package main.java.models.coordinate;
 
-import java.util.List;
+import main.java.models.coordinate.positionCoordinate.PositionCoordinate;
 
 public interface CoordinateBuscaMinas {
 
-    List<Coordinate> getListOfCoordinatesAround();
+    PositionCoordinate getPosition();
 
     int getRow();
 

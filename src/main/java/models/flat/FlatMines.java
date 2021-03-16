@@ -1,7 +1,7 @@
 package main.java.models.flat;
 
 import main.java.models.coordinate.Coordinate;
-import main.java.utils.Random;
+
 import java.util.HashMap;
 import java.util.List;
 
@@ -17,7 +17,6 @@ public class FlatMines {
     }
 
     private void createFlat() {
-        Random random = new Random();
         int counter = 0;
         while (counter < AMOUNT_OF_MINES) {
             int row = 1 + (int)(Math.random() * ConstantFlat.LAST_POSITION_ROW);

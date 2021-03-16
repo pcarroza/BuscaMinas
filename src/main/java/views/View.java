@@ -1,6 +1,6 @@
 package main.java.views;
 
-import main.java.controllers.LocalController;
+import main.java.controllers.local.LocalController;
 
 public abstract class View {
 

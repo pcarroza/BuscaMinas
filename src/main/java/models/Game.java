@@ -20,23 +20,27 @@ public class Game {
 
     public void remove(Coordinate coordinate) {
         assert coordinate != null;
-        this.board.remover(coordinate);
+        this.board.removerFlag(coordinate);
     }
 
-    public void putFlag(Coordinate coordinate) {
-        this.board.putFlag(coordinate);
+    public void putFlagInBox(Coordinate coordinate) {
+        this.board.putFlagInBox(coordinate);
     }
 
-    public boolean isEmpty(Coordinate coordinate) {
-        return this.board.isEmpty(coordinate);
+    public boolean isOpenBox(Coordinate coordinate) {
+        return this.board.isOpenBox(coordinate);
     }
 
-    public boolean isMineBox(Coordinate coordinate) {
-        return this.board.isMineBox(coordinate);
+    public boolean isMineInBox(Coordinate coordinate) {
+        return this.board.isMineInBox(coordinate);
     }
 
     public boolean isFlagInBox(Coordinate coordinate) {
         return this.board.isFlagInBox(coordinate);
+    }
+
+    public State getState() {
+        return this.state;
     }
 
     public void setStateInitial() {

@@ -1,7 +1,7 @@
 package main.java;
 
-import main.java.controllers.LocalController;
-import main.java.controllers.Logic;
+import main.java.controllers.local.LocalController;
+import main.java.controllers.local.Logic;
 import main.java.views.View;
 
 public abstract class BuscaMinas {
@@ -10,7 +10,7 @@ public abstract class BuscaMinas {
 
     private final View view;
 
-    public BuscaMinas() {
+    protected BuscaMinas() {
         this.logic = new Logic();
         this.view = this.createView();
     }
