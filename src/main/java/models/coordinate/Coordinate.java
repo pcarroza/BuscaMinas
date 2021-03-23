@@ -1,8 +1,10 @@
 package main.java.models.coordinate;
 
-import main.java.models.coordinate.positionCoordinate.Context;
+import main.java.models.coordinate.positionCoordinate.ContextCoordinate;
 import main.java.models.coordinate.positionCoordinate.PositionCoordinate;
+import main.java.models.coordinate.strategyCoordinate.ContextStrategy;
 
+import java.util.List;
 import java.util.Objects;
 
 public class Coordinate implements CoordinateBuscaMinas {
@@ -11,18 +13,26 @@ public class Coordinate implements CoordinateBuscaMinas {
 
     private final int column;
 
-    private static Context context;
+    private final ContextCoordinate contextCoordinate;
+
+    private final ContextStrategy contextStrategy;
 
     public Coordinate(int row, int column) {
-        assert row >= 1 && column >= 1;
+        assert row >= 1;
+        assert column >= 1;
         this.row = row;
         this.column = column;
-        context = new Context(this);
+        contextCoordinate = new ContextCoordinate(this);
+        contextStrategy = new ContextStrategy();
     }
 
     @Override
-    public PositionCoordinate getPosition() {
-        return context.getPositionCoordinate();
+    public List<Coordinate> getCoordinatesAround() {
+        return contextStrategy.getCoordinatesAround(this.getPosition());
+    }
+
+    private PositionCoordinate getPosition() {
+        return contextCoordinate.getPosition();
     }
 
     @Override
@@ -56,10 +66,10 @@ public class Coordinate implements CoordinateBuscaMinas {
     }
 
     public static void main(String[] args) {
-        Coordinate coordinate = new Coordinate(1, 1);
+        Coordinate coordinate = new Coordinate(1, 10);
         System.out.println(coordinate.getPosition());
 
-        Coordinate coordinate1 = new Coordinate(1, 10);
+        Coordinate coordinate1 = new Coordinate(5, 10);
         System.out.println(coordinate1.getPosition());
 
         Coordinate coordinate2 = new Coordinate(10,10);
@@ -67,6 +77,5 @@ public class Coordinate implements CoordinateBuscaMinas {
 
         Coordinate coordinate3 = new Coordinate(2,4);
         System.out.println(coordinate3.getPosition());
-
     }
 }

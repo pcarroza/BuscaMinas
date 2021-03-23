@@ -10,13 +10,13 @@ import java.util.List;
 public class HorizontalUpperBandPosition extends Position {
 
     @Override
-    public boolean isContained(Context context) {
+    public boolean isCoordinateInPosition(ContextCoordinate contextCoordinate) {
         List<CoordinateBuscaMinas> coordinates = new ArrayList<>();
         for (int column = 2; column < ConstantFlat.LAST_POSITION_COLUMN - 1; column++) {
             int row = ConstantFlat.FIRST_POSITION_ROW;
             coordinates.add(new Coordinate(row, column));
         }
-        return coordinates.contains(context.getCoordinate());
+        return coordinates.contains(contextCoordinate.getCoordinate());
     }
 
     @Override
@@ -25,7 +25,7 @@ public class HorizontalUpperBandPosition extends Position {
     }
 
     @Override
-    public void changePosition(Context context) {
-        context.changeState(new HorizontalLowerBandPosition());
+    public void changePosition(ContextCoordinate contextCoordinate) {
+        contextCoordinate.changeState(new HorizontalLowerBandPosition());
     }
 }

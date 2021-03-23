@@ -6,10 +6,10 @@ import main.java.models.flat.ConstantFlat;
 public class LowerLeftCornerPosition extends Position {
 
     @Override
-    public boolean isContained(Context context) {
+    public boolean isCoordinateInPosition(ContextCoordinate contextCoordinate) {
         int row = ConstantFlat.LAST_POSITION_ROW;
         int column = ConstantFlat.FIRST_POSITION_COLUMN;
-        return context.isEqualsCoordinate(new Coordinate(row, column));
+        return contextCoordinate.isEqualsCoordinate(new Coordinate(row, column));
     }
 
     @Override
@@ -18,7 +18,7 @@ public class LowerLeftCornerPosition extends Position {
     }
 
     @Override
-    public void changePosition(Context context) {
-        context.changeState(new UpperLeftCornerPosition());
+    public void changePosition(ContextCoordinate contextCoordinate) {
+        contextCoordinate.changeState(new UpperLeftCornerPosition());
     }
 }

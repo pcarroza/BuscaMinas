@@ -27,10 +27,10 @@ public class HashFlat implements Flat {
     @Override
     public void openBox(Coordinate coordinate) {
         assert coordinate != null;
-        /*Box box = Box.NUMBER_OF_MINES_AROUND_THE_BOX;
-        int numberMines = this.mines.calculateNumberOfMines(coordinate.getListOfCoordinatesAround());
+        Box box = Box.NUMBER_OF_MINES_AROUND_THE_BOX;
+        int numberMines = this.mines.calculateNumberOfMines(coordinate.getCoordinatesAround());
         box.setNumberOfMines(String.valueOf(numberMines));
-        this.change(coordinate, box);*/
+        this.change(coordinate, box);
     }
 
     @Override

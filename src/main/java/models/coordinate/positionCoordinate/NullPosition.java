@@ -3,7 +3,7 @@ package main.java.models.coordinate.positionCoordinate;
 public class NullPosition extends Position {
 
     @Override
-    public boolean isContained(Context context) {
+    public boolean isCoordinateInPosition(ContextCoordinate contextCoordinate) {
         return false;
     }
 
@@ -13,7 +13,7 @@ public class NullPosition extends Position {
     }
 
     @Override
-    public void changePosition(Context context) {
+    public void changePosition(ContextCoordinate contextCoordinate) {
 
     }
 }

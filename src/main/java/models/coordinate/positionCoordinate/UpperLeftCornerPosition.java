@@ -6,9 +6,9 @@ import main.java.models.flat.ConstantFlat;
 public class UpperLeftCornerPosition extends Position {
 
     @Override
-    public boolean isContained(Context context) {
+    public boolean isCoordinateInPosition(ContextCoordinate contextCoordinate) {
         int row = ConstantFlat.FIRST_POSITION_ROW;
-        return context.isEqualsCoordinate(new Coordinate(row, row));
+        return contextCoordinate.isEqualsCoordinate(new Coordinate(row, row));
     }
 
     @Override
@@ -17,8 +17,8 @@ public class UpperLeftCornerPosition extends Position {
     }
 
     @Override
-    public void changePosition(Context context) {
-        context.changeState(new HorizontalUpperBandPosition());
+    public void changePosition(ContextCoordinate contextCoordinate) {
+        contextCoordinate.changeState(new HorizontalUpperBandPosition());
     }
 }
 
