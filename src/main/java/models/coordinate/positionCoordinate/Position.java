@@ -1,25 +1,29 @@
 package main.java.models.coordinate.positionCoordinate;
 
-public abstract class Position {
+import main.java.models.coordinate.Coordinate;
 
-    protected PositionCoordinate state;
+import java.util.List;
 
-    protected void findCoordinatePosition(ContextCoordinate contextCoordinate) {
+abstract class Position {
+
+    protected List<Coordinate> coordinates;
+
+    void findCoordinatePosition(ContextCoordinate contextCoordinate) {
         if (this.isCoordinateInPosition(contextCoordinate)) {
-            this.toAssignPosition();
+            this.generateCoordinatesRound(contextCoordinate);
         } else {
             this.changePosition(contextCoordinate);
             contextCoordinate.findCoordinatePosition();
         }
     }
 
-    public abstract boolean isCoordinateInPosition(ContextCoordinate contextCoordinate);
+    abstract boolean isCoordinateInPosition(ContextCoordinate contextCoordinate);
 
-    public abstract void toAssignPosition();
+    abstract void generateCoordinatesRound(ContextCoordinate contextCoordinate);
 
-    public abstract void changePosition(ContextCoordinate contextCoordinate);
+    abstract void changePosition(ContextCoordinate contextCoordinate);
 
-    public PositionCoordinate getPositionCoordinate() {
-        return this.state;
+    List<Coordinate> getCoordinates() {
+        return this.coordinates;
     }
 }

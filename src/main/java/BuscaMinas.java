@@ -1,7 +1,6 @@
 package main.java;
 
-import main.java.controllers.local.LocalController;
-import main.java.controllers.local.Logic;
+import main.java.controllers.OperationController;
 import main.java.views.View;
 
 public abstract class BuscaMinas {
@@ -11,14 +10,16 @@ public abstract class BuscaMinas {
     private final View view;
 
     protected BuscaMinas() {
-        this.logic = new Logic();
+        this.logic = this.createLogic();
         this.view = this.createView();
     }
+
+    protected abstract Logic createLogic();
 
     protected abstract View createView();
 
     public void run() {
-        LocalController controller;
+        OperationController controller;
         do {
             controller = this.logic.getController();
             if (controller != null) {

@@ -2,24 +2,24 @@ package main.java.utils;
 
 import java.util.Scanner;
 
-public class IO {
+public class Console {
 
-    private static IO io;
+    private static Console console;
 
-    public static IO getInstance() {
-        if (io == null) {
-            io = new IO();
+    public static Console getInstance() {
+        if (console == null) {
+            console = new Console();
         }
-        return io;
+        return console;
     }
 
     private final Scanner scanner;
 
-    private IO() {
+    private Console() {
         scanner = new Scanner(System.in);
     }
 
-    public int inputInt(String text) {
+    public int readInt(String text) {
         boolean right = false;
         int number = 0;
         do {

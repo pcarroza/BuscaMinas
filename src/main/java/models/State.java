@@ -1,8 +1,8 @@
 package main.java.models;
 
 public enum State {
-    IN_GAME,
     INITIAL,
+    IN_GAME,
     FINAL,
     EXIT;
 }

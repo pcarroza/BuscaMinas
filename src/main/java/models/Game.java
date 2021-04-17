@@ -1,16 +1,16 @@
 package main.java.models;
 
 import main.java.models.coordinate.Coordinate;
+import main.java.models.flat.Box;
 
 public class Game {
 
     private final Board board;
 
-    private State state;
-
-    public Game() {
+    public Game(Observer observer) {
         board = new Board();
-        state = State.INITIAL;
+        board.register(observer);
+        this.initialize();
     }
 
     public void openBox(Coordinate coordinate) {
@@ -18,46 +18,67 @@ public class Game {
         this.board.openBox(coordinate);
     }
 
-    public void remove(Coordinate coordinate) {
+    public boolean isOpenBox(Coordinate coordinate) {
+        assert coordinate != null;
+        return this.board.isOpenBox(coordinate);
+    }
+
+    public boolean isBoxOccupied(Coordinate coordinate) {
+        assert coordinate != null;
+        return this.board.isBoxOccupied(coordinate);
+    }
+
+    public boolean isOpenAnyBox() {
+        return this.board.isOpenAnyBox();
+    }
+
+    public void removeFlag(Coordinate coordinate) {
         assert coordinate != null;
         this.board.removerFlag(coordinate);
     }
 
     public void putFlagInBox(Coordinate coordinate) {
+        assert coordinate != null;
         this.board.putFlagInBox(coordinate);
     }
 
-    public boolean isOpenBox(Coordinate coordinate) {
-        return this.board.isOpenBox(coordinate);
+    public boolean isFlagInFlat() {
+        return this.board.isFlagInFlat();
     }
 
     public boolean isMineInBox(Coordinate coordinate) {
+        assert coordinate != null;
         return this.board.isMineInBox(coordinate);
     }
 
+    public boolean isCompleteBoard() {
+        return this.board.isCompleteBoard();
+    }
+
     public boolean isFlagInBox(Coordinate coordinate) {
+        assert coordinate != null;
         return this.board.isFlagInBox(coordinate);
     }
 
-    public State getState() {
-        return this.state;
+    public Box getBox(Coordinate coordinate) {
+        assert coordinate != null;
+        return this.board.getBox(coordinate);
     }
 
-    public void setStateInitial() {
-        this.state = State.INITIAL;
+    public void reset() {
+        this.board.reset();
     }
 
-    public void setStateInGame() {
-        this.state = State.IN_GAME;
+    public void initialize() {
+
     }
 
-    public void setStateFinal() {
-        this.state = State.FINAL;
+    public void begin() {
     }
 
-    public void setStateExit() {
-        this.state = State.EXIT;
+    public void end() {
+    }
+
+    public void exit() {
     }
 }
-
-

@@ -1,18 +1,23 @@
 package main.java.models.coordinate.strategyCoordinate;
 
 import main.java.models.coordinate.Coordinate;
+import main.java.models.coordinate.CoordinateBuscaMinas;
 import main.java.models.flat.ConstantFlat;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class RightUpperCornerStrategy implements PositionStrategy {
+public class UpperRightCornerPosition implements PositionStrategy {
 
-    private static final int FIRST_POSITION = 1;
+    private int FIRST_POSITION = 1;
 
     private static final int SECOND_POSITION = 2;
 
     private static final int PENULTIMATE_POSITION = ConstantFlat.LAST_POSITION_COLUMN - 1;
+
+    UpperRightCornerPosition(CoordinateBuscaMinas coordinate) {
+        this.FIRST_POSITION = coordinate.getRow();
+    }
 
     @Override
     public List<Coordinate> calculateNumberOfMines() {

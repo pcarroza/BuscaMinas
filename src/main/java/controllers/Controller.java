@@ -1,29 +1,39 @@
 package main.java.controllers;
 
-import main.java.models.State;
 import main.java.models.coordinate.Coordinate;
+import main.java.models.flat.Box;
 
 public interface Controller {
 
     void openBox(Coordinate coordinate);
 
-    void remove(Coordinate coordinate);
+    boolean isBoxOccupied(Coordinate coordinate);
 
-    void putFlagInBox(Coordinate coordinate);
+    boolean isOpenAnyBox();
 
     boolean isOpenBox(Coordinate coordinate);
 
-    boolean isMineInBox(Coordinate coordinate);
+    void putFlagInBox(Coordinate coordinate);
+
+    void removeFlag(Coordinate coordinate);
 
     boolean isFlagInBox(Coordinate coordinate);
 
-    State getState();
+    boolean isFlagInBoard();
 
-    void setStateInitial();
+    boolean isCompleteBoard();
 
-    void setStateInGame();
+    boolean isMineInBox(Coordinate coordinate);
 
-    void setStateFinal();
+    Box getBox(Coordinate coordinate);
 
-    void setStateExit();
+    void reset();
+
+    void initialize();
+
+    void begin();
+
+    void end();
+
+    void exit();
 }

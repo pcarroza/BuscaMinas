@@ -1,8 +1,8 @@
 package main.java.views;
 
-import main.java.controllers.local.LocalController;
+import main.java.controllers.*;
 
-public abstract class View {
+public interface View extends ControllersVisitor {
 
-    public abstract void interact(LocalController controller);
+    void interact(OperationController operationController);
 }

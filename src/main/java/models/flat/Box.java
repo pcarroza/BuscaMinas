@@ -2,7 +2,7 @@ package main.java.models.flat;
 
 public enum Box {
 
-    EMPTY(new Token("_")),
+    EMPTY(new Token("-")),
     FLAG(new Token("P")),
     MINE(new Token("*")),
     NUMBER_OF_MINES_AROUND_THE_BOX(new Token());

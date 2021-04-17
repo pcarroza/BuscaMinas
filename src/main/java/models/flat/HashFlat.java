@@ -34,6 +34,22 @@ public class HashFlat implements Flat {
     }
 
     @Override
+    public boolean isMineInBox(Coordinate coordinate) {
+        assert coordinate != null;
+        return this.mines.isMineInBox(coordinate);
+    }
+
+    @Override
+    public boolean isOpenAnyBox() {
+        return false;
+    }
+
+    @Override
+    public boolean isCompleteBoard() {
+        return false;
+    }
+
+    @Override
     public void removeFlag(Coordinate coordinate) {
         assert coordinate != null;
         this.change(coordinate, Box.FLAG);
@@ -46,6 +62,8 @@ public class HashFlat implements Flat {
     }
 
     private void change(Coordinate coordinate, Box box) {
+        assert coordinate != null;
+        assert box != null;
         this.flat.replace(coordinate, box);
     }
 
@@ -56,24 +74,35 @@ public class HashFlat implements Flat {
     }
 
     @Override
-    public boolean isFlagInBox(Coordinate coordinate) {
-        return this.isEquals(coordinate, Box.FLAG);
-    }
-
-    private boolean isEquals(Coordinate coordinate, Box box) {
-        return this.flat.get(coordinate).isEquals(box);
+    public boolean isBoxOccupied(Coordinate coordinate) {
+        return false;
     }
 
     @Override
-    public boolean isMineInBox(Coordinate coordinate) {
+    public boolean isFlagInBox(Coordinate coordinate) {
         assert coordinate != null;
-        return this.mines.isMineInBox(coordinate);
+        return this.isEquals(coordinate, Box.FLAG);
+    }
+
+    @Override
+    public boolean isFlagInFlat() {
+        return false;
+    }
+
+    private boolean isEquals(Coordinate coordinate, Box box) {
+        assert coordinate != null;
+        return this.flat.get(coordinate).isEquals(box);
     }
 
     @Override
     public Box getBox(Coordinate coordinate) {
         assert coordinate != null;
         return this.flat.get(coordinate);
+    }
+
+    @Override
+    public void reset() {
+        this.createFlat();
     }
 
     public static void main(String[] args) {

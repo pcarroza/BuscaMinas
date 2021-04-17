@@ -5,6 +5,11 @@ import main.java.views.View;
 public class GraphicBuscaMinas extends BuscaMinas {
 
     @Override
+    protected Logic createLogic() {
+        return null;
+    }
+
+    @Override
     protected View createView() {
         return null;
     }

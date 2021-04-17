@@ -1,7 +1,5 @@
 package main.java.models.coordinate;
 
-import main.java.models.coordinate.positionCoordinate.PositionCoordinate;
-
 import java.util.List;
 
 public interface CoordinateBuscaMinas {
@@ -12,4 +10,5 @@ public interface CoordinateBuscaMinas {
 
     int getColumn();
 
+    CoordinateBuscaMinas clone();
 }

@@ -1,19 +1,24 @@
 package main.java.models.coordinate.strategyCoordinate;
 
 import main.java.models.coordinate.Coordinate;
+import main.java.models.coordinate.CoordinateBuscaMinas;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class UpperLeftCornerStrategy implements PositionStrategy {
+public class UpperLeftCornerStrategy {
 
-    private static final int FIRST_POSITION = 1;
+    private final int FIRST_POSITION;
 
-    private static final int SECOND_POSITION = 2;
+    private final int SECOND_POSITION;
 
-    @Override
-    public List<Coordinate> calculateNumberOfMines() {
-        List<Coordinate> coordinatesRound = new ArrayList<>();
+    public UpperLeftCornerStrategy(CoordinateBuscaMinas coordinate) {
+        this.FIRST_POSITION = coordinate.getRow();
+        this.SECOND_POSITION = coordinate.getColumn() + 1;
+    }
+
+    public List<CoordinateBuscaMinas> generateCoordinatesRound() {
+        List<CoordinateBuscaMinas> coordinatesRound = new ArrayList<>();
         coordinatesRound.add(new Coordinate(FIRST_POSITION, SECOND_POSITION));
         coordinatesRound.add(new Coordinate(SECOND_POSITION, FIRST_POSITION));
         coordinatesRound.add(new Coordinate(SECOND_POSITION, SECOND_POSITION));

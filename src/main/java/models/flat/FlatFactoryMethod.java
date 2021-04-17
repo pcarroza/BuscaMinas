@@ -15,7 +15,7 @@ public abstract class FlatFactoryMethod {
     private static String getSingletonFactory() {
         /*String line = null;
         try {
-            //line = new BufferedReader(new FileReader("src/main/resources/Singe"))
+            line = new BufferedReader(new FileReader("src/main/resources/SingeltonFactory"))
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }*/

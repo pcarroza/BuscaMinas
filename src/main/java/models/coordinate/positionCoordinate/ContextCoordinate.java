@@ -1,10 +1,13 @@
 package main.java.models.coordinate.positionCoordinate;
 
+import main.java.models.coordinate.Coordinate;
 import main.java.models.coordinate.CoordinateBuscaMinas;
+
+import java.util.List;
 
 public class ContextCoordinate {
 
-    private CoordinateBuscaMinas coordinate;
+    private final CoordinateBuscaMinas coordinate;
 
     private static Position position = new UpperRightCornerPosition();
 
@@ -12,34 +15,30 @@ public class ContextCoordinate {
         this.coordinate = coordinate;
     }
 
-    public void setCoordinate(CoordinateBuscaMinas coordinate) {
-        this.coordinate = coordinate;
+    public List<Coordinate> getCoordinatesAround() {
+        this.findCoordinatePosition();
+        List<Coordinate> coordinatesAroundPosition = position.getCoordinates();
+        this.reset();
+        return coordinatesAroundPosition;
+    }
+
+    protected void findCoordinatePosition() {
+        position.findCoordinatePosition(this);
     }
 
     private void reset() {
         position = new UpperRightCornerPosition();
     }
 
-    public void changeState(Position positionCoordinate) {
+    protected void changeState(Position positionCoordinate) {
         position = positionCoordinate;
     }
 
-    public PositionCoordinate getPosition() {
-        this.findCoordinatePosition();
-        PositionCoordinate savePosition = position.getPositionCoordinate();
-        this.reset();
-        return savePosition;
-    }
-
-    public void findCoordinatePosition() {
-        position.findCoordinatePosition(this);
-    }
-
-    public boolean isEqualsCoordinate(CoordinateBuscaMinas coordinate) {
+    protected boolean isEqualsCoordinate(CoordinateBuscaMinas coordinate) {
         return this.coordinate.equals(coordinate);
     }
 
     public CoordinateBuscaMinas getCoordinate() {
-        return this.coordinate;
+        return coordinate.clone();
     }
 }

@@ -2,15 +2,16 @@ package main.java.models.coordinate.positionCoordinate;
 
 import main.java.models.coordinate.Coordinate;
 import main.java.models.coordinate.CoordinateBuscaMinas;
+import main.java.models.coordinate.positions.CoordinateZone;
 import main.java.models.flat.ConstantFlat;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class RightVerticalPosition extends Position {
+class RightVerticalPosition extends Position {
 
     @Override
-    public boolean isCoordinateInPosition(ContextCoordinate contextCoordinate) {
+    boolean isCoordinateInPosition(ContextCoordinate contextCoordinate) {
         List<CoordinateBuscaMinas> coordinates = new ArrayList<>();
         for (int row = 2; row < ConstantFlat.LAST_POSITION_ROW; row++) {
             int column = ConstantFlat.LAST_POSITION_COLUMN;
@@ -20,12 +21,12 @@ public class RightVerticalPosition extends Position {
     }
 
     @Override
-    public void toAssignPosition() {
-        this.state = PositionCoordinate.RIGHT_VERTICAL_BAND;
+    void generateCoordinatesRound(ContextCoordinate contextCoordinate) {
+
     }
 
     @Override
-    public void changePosition(ContextCoordinate contextCoordinate) {
+    void changePosition(ContextCoordinate contextCoordinate) {
         contextCoordinate.changeState(new LeftVerticalBandPosition());
     }
 }

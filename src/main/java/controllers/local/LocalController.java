@@ -2,10 +2,10 @@ package main.java.controllers.local;
 
 import main.java.controllers.Controller;
 import main.java.models.Game;
-import main.java.models.State;
 import main.java.models.coordinate.Coordinate;
+import main.java.models.flat.Box;
 
-public class LocalController implements Controller {
+public abstract class LocalController implements Controller {
 
     protected Game game;
 
@@ -13,58 +13,75 @@ public class LocalController implements Controller {
         this.game = game;
     }
 
-    @Override
     public void openBox(Coordinate coordinate) {
-        this.game.openBox(coordinate);
+        assert false;
     }
 
-    @Override
-    public void remove(Coordinate coordinate) {
-        this.game.remove(coordinate);
-    }
-
-    @Override
-    public void putFlagInBox(Coordinate coordinate) {
-        this.game.putFlagInBox(coordinate);
-    }
-
-    @Override
     public boolean isOpenBox(Coordinate coordinate) {
+        assert false;
         return false;
     }
 
-    @Override
+    public boolean isBoxOccupied(Coordinate coordinate) {
+        assert false;
+        return false;
+    }
+
+    public boolean isOpenAnyBox() {
+        assert false;
+        return false;
+    }
+
+    public void putFlagInBox(Coordinate coordinate) {
+        assert false;
+    }
+
+    public void removeFlag(Coordinate coordinate) {
+        assert false;
+    }
+
     public boolean isMineInBox(Coordinate coordinate) {
+        assert false;
         return false;
     }
 
-    @Override
     public boolean isFlagInBox(Coordinate coordinate) {
+        assert false;
         return false;
     }
 
-    @Override
-    public State getState() {
+    public boolean isFlagInBoard() {
+        assert false;
+        return false;
+    }
+
+    public boolean isCompleteBoard() {
+        assert false;
+        return false;
+    }
+
+    public Box getBox(Coordinate coordinate) {
+        assert false;
         return null;
     }
 
-    @Override
-    public void setStateInitial() {
-
+    public void reset() {
+        assert false;
     }
 
-    @Override
-    public void setStateInGame() {
-
+    public void initialize() {
+        assert false;
     }
 
-    @Override
-    public void setStateFinal() {
-
+    public void begin() {
+        assert false;
     }
 
-    @Override
-    public void setStateExit() {
+    public void end() {
+        assert false;
+    }
 
+    public void exit() {
+        assert false;
     }
 }

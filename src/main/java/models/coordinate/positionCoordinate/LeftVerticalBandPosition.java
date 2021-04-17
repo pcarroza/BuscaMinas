@@ -7,10 +7,10 @@ import main.java.models.flat.ConstantFlat;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LeftVerticalBandPosition extends Position {
+class LeftVerticalBandPosition extends Position {
 
     @Override
-    public boolean isCoordinateInPosition(ContextCoordinate contextCoordinate) {
+    boolean isCoordinateInPosition(ContextCoordinate contextCoordinate) {
         int column = 1;
         List<CoordinateBuscaMinas> coordinates = new ArrayList<>();
         for (int row = 2; row < ConstantFlat.LAST_POSITION_ROW; row++) {
@@ -20,12 +20,11 @@ public class LeftVerticalBandPosition extends Position {
     }
 
     @Override
-    public void toAssignPosition() {
-        this.state = PositionCoordinate.LEFT_VERTICAL_BAND;
+    void generateCoordinatesRound(ContextCoordinate contextCoordinate) {
     }
 
     @Override
-    public void changePosition(ContextCoordinate contextCoordinate) {
+    void changePosition(ContextCoordinate contextCoordinate) {
         contextCoordinate.changeState(new CentralPosition());
     }
 }

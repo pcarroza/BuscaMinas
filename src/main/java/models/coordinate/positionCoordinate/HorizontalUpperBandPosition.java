@@ -7,10 +7,10 @@ import main.java.models.flat.ConstantFlat;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HorizontalUpperBandPosition extends Position {
+class HorizontalUpperBandPosition extends Position {
 
     @Override
-    public boolean isCoordinateInPosition(ContextCoordinate contextCoordinate) {
+    boolean isCoordinateInPosition(ContextCoordinate contextCoordinate) {
         List<CoordinateBuscaMinas> coordinates = new ArrayList<>();
         for (int column = 2; column < ConstantFlat.LAST_POSITION_COLUMN - 1; column++) {
             int row = ConstantFlat.FIRST_POSITION_ROW;
@@ -20,12 +20,11 @@ public class HorizontalUpperBandPosition extends Position {
     }
 
     @Override
-    public void toAssignPosition() {
-        this.state = PositionCoordinate.HORIZONTAL_UPPER_BAND;
+    void generateCoordinatesRound(ContextCoordinate contextCoordinate) {
     }
 
     @Override
-    public void changePosition(ContextCoordinate contextCoordinate) {
+    void changePosition(ContextCoordinate contextCoordinate) {
         contextCoordinate.changeState(new HorizontalLowerBandPosition());
     }
 }
